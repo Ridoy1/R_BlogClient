@@ -15,6 +15,14 @@ const AllEvent = () => {
     return (
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
             {
+                events.length === 0 && 
+                <div className="d-flex justify-content-center">
+                    <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            }
+            {
                 events.map(event => <Event event={event}/>)
             }
         </div>
